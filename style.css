@@ -386,23 +386,44 @@ section#planos .cta-button-plano:hover {
     padding-top: 15px;
 }
 
-/* =================== DESIGN RESPONSIVO =================== */
+/* =================== DESIGN RESPONSIVO - CÓDIGO CORRIGIDO =================== */
+
 @media (max-width: 900px) {
+    /* Faz o layout da seção principal empilhar verticalmente */
+    .hero-section {
+        display: flex;
+        flex-direction: column; /* A chave para empilhar os itens */
+        min-height: auto; /* Altura automática para o conteúdo caber */
+        padding: 40px 0;
+    }
+
+    /* Ajusta o contêiner do texto */
     .hero-content {
-        flex-basis: 100%;
-        justify-content: center;
+        position: static; /* Traz o texto de volta para o fluxo normal */
+        flex-basis: auto;
+        width: 90%;
+        background: none; /* Remove o fundo semi-transparente */
         text-align: center;
-        background: rgba(0, 0, 0, 0.6);
-        padding: 0 5%;
+        order: 1; /* Define a ordem: texto virá primeiro */
     }
 
     .hero-text {
-        padding: 2rem 0;
+        padding: 0;
     }
 
+    /* Ajusta o contêiner da imagem */
     .hero-image {
+        position: static; /* Traz a imagem de volta para o fluxo normal */
         width: 100%;
-        opacity: 0.5;
+        height: auto;
+        opacity: 1; /* Garante que a imagem fique 100% visível */
+        order: 2; /* Define a ordem: imagem virá depois do texto */
+        margin-top: 40px; /* Cria um espaço entre o botão e a imagem */
+    }
+
+    .hero-image img {
+        max-height: 60vh; /* Limita a altura da imagem para não ficar gigante */
+        object-position: center;
     }
 }
 
@@ -416,7 +437,7 @@ section#planos .cta-button-plano:hover {
     }
     
     .logo {
-        margin: 0 auto 10px auto;
+        margin: 0 auto 20px auto;
     }
 
     .navbar ul {
@@ -453,4 +474,5 @@ section#planos .cta-button-plano:hover {
 
 #paymentForm .cta-button-plano {
     margin-top: 10px;
+
 }
