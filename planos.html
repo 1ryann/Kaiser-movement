@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planos - Team Garin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">APRESENTAÇÃO</a></li>
+                <li><a href="resultados.html">RESULTADOS</a></li>
+                <li><a href="planos.html" class="active">PLANOS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="planos" class="page-section">
+    <div class="container">
+        <h2>FAÇA PARTE DO TIME</h2>
+        <p class="section-subtitle">Escolha o plano ideal para você e comece sua transformação hoje.</p>
+        
+        <div class="planos-container">
+
+            <div class="plano-card">
+                <h3>CONSULTORIA MENSAL</h3>
+                <div class="plano-preco"><span>R$</span>80<span>,00</span></div>
+                <ul>
+                    <li>✔ Plano de Treino Individualizado</li>
+                    <li>✔ Plano Alimentar Flexível</li>
+                    <li>✔ Suporte via WhatsApp</li>
+                    <li>✔ Análise de Vídeos</li>
+                </ul>
+                <button class="cta-button-plano" onclick="openModal('CONSULTORIA MENSAL', '80,00', 'assents/images/qrcode-mensal.png', 'SUA-CHAVE-PIX-AQUI')">QUERO ESSE</button>
+            </div>
+
+            <div class="plano-card destaque">
+                <div class="destaque-tag">MAIS POPULAR</div>
+                <h3>CONSULTORIA TRIMESTRAL</h3>
+                <div class="plano-preco"><span>R$</span>150<span>,00</span></div>
+                 <ul>
+                    <li>✔ Plano de Treino Individualizado</li>
+                    <li>✔ Plano Alimentar Flexível</li>
+                    <li>✔ Suporte Prioritário via WhatsApp</li>
+                    <li>✔ Análise de Vídeos</li>
+                    <li>✔ 2 feedbacks por vídeo chamada</li>
+                </ul>
+                <button class="cta-button-plano" onclick="openModal('CONSULTORIA TRIMESTRAL', '150,00', 'assents/images/qrcode-trimestral.png', 'SUA-CHAVE-PIX-AQUI')">QUERO ESSE</button>
+            </div>
+
+            <div class="plano-card">
+                 <h3>CONSULTORIA SEMESTRAL</h3>
+                <div class="plano-preco"><span>R$</span>220<span>,00</span></div>
+                 <ul>
+                    <li>✔ Plano de Treino Individualizado</li>
+                    <li>✔ Plano Alimentar Flexível</li>
+                    <li>✔ Suporte Prioritário via WhatsApp</li>
+                    <li>✔ Análise de Vídeos</li>
+                    <li>✔ 2 feedbacks por vídeo chamada</li>
+                </ul>
+                <button class="cta-button-plano" onclick="openModal('CONSULTORIA SEMESTRAL', '220,00', 'assents/images/qrcode-semestral.png', 'SUA-CHAVE-PIX-AQUI')">QUERO ESSE</button>
+            </div>
+
+        </div> </div>
+</section>
+            </div>
+        </section>
+    </main>
+
+    <div id="paymentModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <div id="formStep">
+            <h2 id="modalPlanTitle"></h2>
+            <p>Excelente escolha! Por favor, preencha seus dados para prosseguir.</p>
+            <form id="paymentForm" action="https://formsubmit.co/kaisermov@gmail.com" method="POST">
+                <input type="hidden" name="_subject" id="formSubject" value="Novo Pedido de Plano!">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="Nome" placeholder="Seu nome completo" required>
+                <input type="email" name="E-mail" placeholder="Seu melhor e-mail" required>
+                <input type="tel" name="WhatsApp" placeholder="WhatsApp com DDD (Ex: 11999998888)" required>
+                <button type="submit" class="cta-button-plano">Prosseguir para Pagamento</button>
+            </form>
+        </div>
+        <div id="paymentStep" style="display: none;">
+            <h2 id="paymentPlanTitle"></h2>
+            <p>Quase lá! Realize o pagamento e nos envie o comprovante.</p>
+            <div class="pix-details">
+                <img id="pixQrCode" src="" alt="QR Code Pix" style="max-width: 250px; border-radius: 8px;">
+                <p>Ou use a chave "Copia e Cola":</p>
+                <textarea id="pixCopyPaste" rows="3" readonly></textarea>
+                <button onclick="copyPixKey()">Copiar Chave</button>
+            </div>
+            <div class="instructions">
+                <h3>Tudo pronto?</h3>
+                <p>Após realizar o pagamento no seu app do banco, clique no botão abaixo para nos enviar o comprovante diretamente pelo WhatsApp.</p>
+                <button id="whatsappRedirectBtn" class="cta-button-plano" style="margin-top: 20px; width: 100%;">Enviar Comprovante via WhatsApp</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="planos.js"></script>
+</html>
