@@ -1,3 +1,4 @@
+/* =================== CONFIGURAÇÕES GLOBAIS =================== */
 body {
     background-color: #000000;
     background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('assents/images/background-texture.png');
@@ -47,36 +48,32 @@ header {
     color: #ffffff;
     border-bottom: 2px solid #ffffff;
 }
-
 .hero-section {
     min-height: calc(100vh - 80px);
     display: flex;
+    justify-content: center;
     width: 100%;
     position: relative;
+    padding: 0px 0;
 }
 
 .hero-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-basis: 55%;
-    padding: 0 5%;
-    z-index: 2;
+    width: 90%;
+    max-width: 700px;
 }
 
 .hero-text {
-    max-width: 550px;
+    text-align: center;
 }
 
 .logo {
     width: 100%;
-    max-width: 350px;
-    margin-bottom: 10px;
+    max-width: 450px;
+    margin: 0 auto 20px auto;
 }
 
 .subtitle {
     font-weight: 700;
-    margin-left: 5px;
     margin-bottom: 40px;
 }
 
@@ -103,20 +100,9 @@ header {
     transform: scale(1.05);
 }
 
-.hero-image {
-    position: absolute;
-    top: 0;
-    right: 5%; 
-    bottom: 0;
-    width: 50%;
-    z-index: 1;
-}
 
-.hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: bottom right;
+.hero-image {
+    display: none;
 }
 
 
@@ -211,6 +197,7 @@ header {
     margin: 0;
     color: #ccc;
 }
+
 section#planos .planos-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -220,7 +207,7 @@ section#planos .planos-container {
 
 section#planos .plano-card {
     background-color: #111;
-    padding: 30px; 
+    padding: 30px;
     border-radius: 8px;
     border: 1px solid #333;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -253,13 +240,13 @@ section#planos .destaque-tag {
 }
 
 section#planos .plano-card h3 {
-    font-size: 1.3em; 
+    font-size: 1.3em;
     margin-bottom: 15px;
     font-weight: 700;
 }
 
 section#planos .plano-preco {
-    font-size: 2.2em; 
+    font-size: 2.2em;
     font-weight: 900;
     margin-bottom: 25px;
 }
@@ -274,7 +261,7 @@ section#planos .plano-card ul {
     padding: 0;
     margin: 0 0 30px 0;
     text-align: left;
-    font-size: 0.9em; 
+    font-size: 0.9em;
     color: #ccc;
     flex-grow: 1;
 }
@@ -283,7 +270,7 @@ section#planos .plano-card ul li {
     margin-bottom: 12px;
 }
 
-section#planos .cta-button-plano {
+.cta-button-plano {
     display: block;
     background-color: #FFFFFF;
     color: #000000;
@@ -297,13 +284,18 @@ section#planos .cta-button-plano {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.9em;
     cursor: pointer;
+    text-align: center;
+    width: 100%;
 }
 
-section#planos .cta-button-plano:hover {
+.cta-button-plano:hover {
     background-color: #dddddd;
 }
 
-/* =================== ESTILOS DO MODAL DE PAGAMENTO =================== */
+#paymentForm .cta-button-plano {
+    margin-top: 10px;
+}
+
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -386,47 +378,6 @@ section#planos .cta-button-plano:hover {
     padding-top: 15px;
 }
 
-/* =================== DESIGN RESPONSIVO - CÓDIGO CORRIGIDO =================== */
-
-@media (max-width: 900px) {
-    /* Faz o layout da seção principal empilhar verticalmente */
-    .hero-section {
-        display: flex;
-        flex-direction: column; /* A chave para empilhar os itens */
-        min-height: auto; /* Altura automática para o conteúdo caber */
-        padding: 40px 0;
-    }
-
-    /* Ajusta o contêiner do texto */
-    .hero-content {
-        position: static; /* Traz o texto de volta para o fluxo normal */
-        flex-basis: auto;
-        width: 90%;
-        background: none; /* Remove o fundo semi-transparente */
-        text-align: center;
-        order: 1; /* Define a ordem: texto virá primeiro */
-    }
-
-    .hero-text {
-        padding: 0;
-    }
-
-    /* Ajusta o contêiner da imagem */
-    .hero-image {
-        position: static; /* Traz a imagem de volta para o fluxo normal */
-        width: 100%;
-        height: auto;
-        opacity: 1; /* Garante que a imagem fique 100% visível */
-        order: 2; /* Define a ordem: imagem virá depois do texto */
-        margin-top: 40px; /* Cria um espaço entre o botão e a imagem */
-    }
-
-    .hero-image img {
-        max-height: 60vh; /* Limita a altura da imagem para não ficar gigante */
-        object-position: center;
-    }
-}
-
 @media (max-width: 768px) {
     body {
         padding-top: 60px;
@@ -434,10 +385,6 @@ section#planos .cta-button-plano:hover {
 
     .hero-text h1 {
         font-size: 2em;
-    }
-    
-    .logo {
-        margin: 0 auto 20px auto;
     }
 
     .navbar ul {
@@ -449,30 +396,4 @@ section#planos .cta-button-plano:hover {
     section#planos .plano-card.destaque {
         transform: scale(1);
     }
-}
-.cta-button-plano {
-    display: block;
-    background-color: #FFFFFF;
-    color: #000000;
-    padding: 12px;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 5px;
-    margin-top: auto;
-    transition: background-color 0.3s ease;
-    border: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9em;
-    cursor: pointer;
-    text-align: center;
-    width: 100%;
-}
-
-.cta-button-plano:hover {
-    background-color: #dddddd;
-}
-
-#paymentForm .cta-button-plano {
-    margin-top: 10px;
-
 }
