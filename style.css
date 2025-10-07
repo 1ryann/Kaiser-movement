@@ -1,14 +1,14 @@
-/* =================== CONFIGURAÇÕES GLOBAIS =================== */
+/* CONFIGURAÇÕES GLOBAIS */
 body {
     background-color: #000000;
     background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('assents/images/background-texture.png');
     color: #FFFFFF;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
-    padding-top: -100px;
+    padding-top: 0px;
 }
 
-/* =================== CABEÇALHO E NAVEGAÇÃO =================== */
+/* CABEÇALHO E NAVEGAÇÃO */
 header {
     position: fixed;
     top: 0;
@@ -49,7 +49,7 @@ header {
     border-bottom: 2px solid #ffffff;
 }
 
-/* =================== SEÇÃO PRINCIPAL (HERO - index.html) - NOVO LAYOUT =================== */
+/* SEÇÃO PRINCIPAL*/
 .hero-section {
     min-height: calc(100vh - 80px);
     display: flex;
@@ -65,7 +65,7 @@ header {
     color: #cccccc;
 }
 
-/* --- Bloco Superior (logo + texto) --- */
+/* Bloco Superior (logo + texto) */
 .hero-top {
     display: flex;
     align-items: center;
@@ -93,7 +93,7 @@ header {
     color: #FFFFFF;
 }
 
-/* --- Bloco Inferior (Quem Somos?) --- */
+/* Bloco Inferior (Quem Somos?) */
 .hero-bottom {
     margin-top: -150px;
 }
@@ -105,7 +105,7 @@ header {
     color: #FFFFFF;
 }
 
-/* --- Botão CTA --- */
+/* Botão CTA */
 .hero-cta {
     text-align: center;
     margin-top: 40px;
@@ -128,7 +128,7 @@ header {
 }
 
 
-/* =================== ESTILOS GERAIS PARA PÁGINAS DE CONTEÚDO =================== */
+/* ESTILOS GERAIS PARA PÁGINAS DE CONTEÚDO */
 .page-section {
     padding: 60px 0;
 }
@@ -153,7 +153,7 @@ header {
     font-size: 1.1em;
 }
 
-/* --- Estilos da Seção de Resultados --- */
+/* Estilos da Seção de Resultados */
 .resultados-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -222,7 +222,7 @@ header {
     color: #ccc;
 }
 
-/* --- Estilos da Seção de Planos --- */
+/* Estilos da Seção de Planos */
 section#planos .planos-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -295,7 +295,7 @@ section#planos .plano-card ul li {
     margin-bottom: 12px;
 }
 
-/* --- Estilos dos Botões e Modal --- */
+/* Estilos dos Botões e Modal */
 .cta-button-plano {
     display: block;
     background-color: #FFFFFF;
@@ -404,45 +404,51 @@ section#planos .plano-card ul li {
     padding-top: 15px;
 }
 
-/* =================== DESIGN RESPONSIVO =================== */
+/* DESIGN RESPONSIVO */
 @media (max-width: 768px) {
     body {
-        padding-top: 0px;
+        padding-top: 60px;
     }
-
+    
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .hero-top {
         flex-direction: column;
         text-align: center;
+        gap: 20px; 
     }
 
     .hero-logo-container {
-        flex-basis: auto;
-        width: 60%;
-        max-width: 250px;
-        margin-bottom: 20px;
+        flex-basis: auto; 
+        width: 70%; 
+        max-width: 280px; 
+        margin-bottom: 0;
     }
 
     .hero-bottom {
-        text-align: center;
+        text-align: center; 
+        margin-top: 50px;
     }
 
     .hero-intro-text h1,
     .hero-bottom h2 {
         font-size: 2em;
     }
-
     .navbar ul {
         gap: 20px;
         flex-wrap: wrap;
         padding: 0 10px;
     }
-
+    
     section#planos .plano-card.destaque {
         transform: scale(1);
     }
 }
 
-/* =================== ANIMAÇÃO DE REVELAR AO ROLAR (FADE IN) =================== */
+/* ANIMAÇÃO DE REVELAR AO ROLAR (FADE IN) */
 .fade-in-element {
     opacity: 0;
     transform: translateY(20px);
@@ -454,7 +460,7 @@ section#planos .plano-card ul li {
     transform: translateY(0);
 }
 
-/* =================== RODAPÉ =================== */
+/* RODAPÉ */
 footer {
     background-color: #000000;
     color: #888;
