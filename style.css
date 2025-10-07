@@ -5,7 +5,7 @@ body {
     color: #FFFFFF;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
-    padding-top: 80px;
+    padding-top: -100px;
 }
 
 /* =================== CABEÇALHO E NAVEGAÇÃO =================== */
@@ -48,39 +48,67 @@ header {
     color: #ffffff;
     border-bottom: 2px solid #ffffff;
 }
+
+/* =================== SEÇÃO PRINCIPAL (HERO - index.html) - NOVO LAYOUT =================== */
 .hero-section {
     min-height: calc(100vh - 80px);
     display: flex;
+    align-items: center;
     justify-content: center;
     width: 100%;
-    position: relative;
-    padding: 0px 0;
+    padding: 30px 0;
 }
 
 .hero-content {
     width: 90%;
-    max-width: 700px;
+    max-width: 1000px;
+    color: #cccccc;
 }
 
-.hero-text {
-    text-align: center;
+/* --- Bloco Superior (logo + texto) --- */
+.hero-top {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 10px;
+}
+
+.hero-logo-container {
+    flex: 0 0 450px;
 }
 
 .logo {
     width: 100%;
-    max-width: 450px;
-    margin: 0 auto 20px auto;
+    max-width: 100%;
 }
 
-.subtitle {
-    font-weight: 700;
-    margin-bottom: 40px;
+.hero-intro-text {
+    flex: 1;
 }
 
-.hero-text h1 {
+.hero-intro-text h1 {
     font-size: 2.5em;
     font-weight: 900;
     margin-bottom: 20px;
+    color: #FFFFFF;
+}
+
+/* --- Bloco Inferior (Quem Somos?) --- */
+.hero-bottom {
+    margin-top: -150px;
+}
+
+.hero-bottom h2 {
+    font-size: 2em;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+}
+
+/* --- Botão CTA --- */
+.hero-cta {
+    text-align: center;
+    margin-top: 40px;
 }
 
 .cta-button {
@@ -91,7 +119,6 @@ header {
     text-decoration: none;
     font-weight: 700;
     border-radius: 5px;
-    margin-top: 20px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -101,11 +128,7 @@ header {
 }
 
 
-.hero-image {
-    display: none;
-}
-
-
+/* =================== ESTILOS GERAIS PARA PÁGINAS DE CONTEÚDO =================== */
 .page-section {
     padding: 60px 0;
 }
@@ -130,6 +153,7 @@ header {
     font-size: 1.1em;
 }
 
+/* --- Estilos da Seção de Resultados --- */
 .resultados-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -198,6 +222,7 @@ header {
     color: #ccc;
 }
 
+/* --- Estilos da Seção de Planos --- */
 section#planos .planos-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -270,6 +295,7 @@ section#planos .plano-card ul li {
     margin-bottom: 12px;
 }
 
+/* --- Estilos dos Botões e Modal --- */
 .cta-button-plano {
     display: block;
     background-color: #FFFFFF;
@@ -378,12 +404,30 @@ section#planos .plano-card ul li {
     padding-top: 15px;
 }
 
+/* =================== DESIGN RESPONSIVO =================== */
 @media (max-width: 768px) {
     body {
-        padding-top: 60px;
+        padding-top: 0px;
     }
 
-    .hero-text h1 {
+    .hero-top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-logo-container {
+        flex-basis: auto;
+        width: 60%;
+        max-width: 250px;
+        margin-bottom: 20px;
+    }
+
+    .hero-bottom {
+        text-align: center;
+    }
+
+    .hero-intro-text h1,
+    .hero-bottom h2 {
         font-size: 2em;
     }
 
@@ -392,8 +436,33 @@ section#planos .plano-card ul li {
         flex-wrap: wrap;
         padding: 0 10px;
     }
-    
+
     section#planos .plano-card.destaque {
         transform: scale(1);
     }
+}
+
+/* =================== ANIMAÇÃO DE REVELAR AO ROLAR (FADE IN) =================== */
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =================== RODAPÉ =================== */
+footer {
+    background-color: #000000;
+    color: #888;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 5px 0;
 }
