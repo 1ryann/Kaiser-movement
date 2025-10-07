@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const whatsappNumber = '556993489767'; // SEU NÚMERO AQUI
+    const whatsappNumber = '556993489767'; 
     const modal = document.getElementById('paymentModal');
     const formStep = document.getElementById('formStep');
     const paymentStep = document.getElementById('paymentStep');
@@ -58,4 +58,5 @@ document.addEventListener('DOMContentLoaded', function() {
             closeModal();
         }
     }
+
 });
